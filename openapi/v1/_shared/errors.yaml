@@ -1,0 +1,13 @@
+components:
+  schemas:
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          description: Machine-readable error identifier (e.g. `USER_NOT_FOUND`)
+        message:
+          type: string
+          description: Human-readable description for debugging / logs
+      example: { "code": "FORBIDDEN", "message": "Access denied" }

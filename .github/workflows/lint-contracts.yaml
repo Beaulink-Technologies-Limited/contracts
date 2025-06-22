@@ -1,0 +1,12 @@
+name: contract-lint
+on:
+  pull_request:
+    paths: ["openapi/**/*.yaml"]
+jobs:
+  spectral:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: stoplightio/spectral-action@v1
+        with:
+          file_glob: "openapi/**/*.yaml"

@@ -1,0 +1,30 @@
+openapi: 3.1.0
+info:
+  title: Beaulink Identity Service API
+  version: "1.0.0"
+  description: |
+    Core authentication / authorisation endpoints.
+    **NOTE:** Spec is intentionally minimal; we’ll expand once the service code
+    is ready.
+servers:
+  - url: https://api.beaulink.com
+    description: Production
+
+paths:
+  /v1/auth/healthz:
+    get:
+      summary: Liveness probe
+      operationId: identityHealthz
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+
+components:
+  securitySchemes: {}
+  schemas: {}
